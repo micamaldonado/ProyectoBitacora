@@ -10,5 +10,11 @@ package clases;
  * @author user
  */
 public class Investigacion {
+    String tiempoDedicado;
+    
+    //Constructor
+    public Investigacion(){
+        
+    }
     
 }
