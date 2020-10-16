@@ -19,22 +19,23 @@ public class Ejercicio {
     public Ejercicio() {
     }
 //Constructor
+
     public Ejercicio(String tiempoDedicadoEj, String experiencia, String dudasEj, String porcLogrado) {
         this.tiempoDedicadoEj = tiempoDedicadoEj;
         this.experiencia = experiencia;
         this.dudasEj = dudasEj;
         this.porcLogrado = porcLogrado;
     }
-   
- //Imprimir datos de ejercicios
-    public void ImprimirDatoEjercicio(){
-         System.out.print("Tiempo dedicado: " + tiempoDedicadoEj); 
-        System.out.print("Experiencia: " + experiencia);   
-         System.out.print("Dudas: " + dudasEj);
-          System.out.print("Porcentaje logrado: " + porcLogrado);
+
+    //Imprimir datos de ejercicios
+    public void ImprimirDatoEjercicio() {
+        System.out.print("Tiempo dedicado: " + tiempoDedicadoEj);
+        System.out.print("Experiencia: " + experiencia);
+        System.out.print("Dudas: " + dudasEj);
+        System.out.print("Porcentaje logrado: " + porcLogrado);
 
     }
-    
+
 //Getters y Setters
     public String getTiempoDedicadoEj() {
         return tiempoDedicadoEj;

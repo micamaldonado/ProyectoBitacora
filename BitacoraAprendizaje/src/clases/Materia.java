@@ -18,20 +18,21 @@ public class Materia {
     private String nombreMateria;
     public ArrayList<Tema> temas;
 
-    public Materia(){
+    public Materia() {
     }
 //Constructor
+
     public Materia(String codigoMateria, String nombreMateria) {
         this.codigoMateria = codigoMateria;
         this.nombreMateria = nombreMateria;
-        temas= new ArrayList();
+        temas = new ArrayList();
     }
 //Ver imprimirTemaMateria
-    
+
     // Imprimir datos de las materias
-     public void imprimirDatoMateria() {
-        System.out.print("Código: " + codigoMateria); 
-        System.out.print("Nombre: " + nombreMateria);   
+    public void imprimirDatoMateria() {
+        System.out.print("Código: " + codigoMateria);
+        System.out.print("Nombre: " + nombreMateria);
     }
 //Imprimir Temas de Materias ??
 //      public void imprimirTemaMateria() {
@@ -44,9 +45,9 @@ public class Materia {
 //            System.out.println("El nombre ingresado no existe");
 //        }
 //    }
- 
-     //Registrar temas
-      public void registrarTema() {
+
+    //Registrar temas
+    public void registrarTema() {
         System.out.println("Ingrese el código del tema: ");
         String codigoTema = entrada.nextLine();
         System.out.println("Ingrese el nombre del tema: ");
@@ -55,14 +56,14 @@ public class Materia {
         String fechaTema = entrada.nextLine();
         System.out.println("");
 
-        Tema unTema = new Tema(codigoTema, nombreTema,fechaTema);
+        Tema unTema = new Tema(codigoTema, nombreTema, fechaTema);
         this.temas.add(unTema);
 
         System.out.println("¡LOS DATOS DEL TEMA HAN SIDO CARGADOS SATISFACTORIAMENTE!");
         System.out.println();
     }
-     
-   //Getters y Setters
+
+    //Getters y Setters
     public String getCodigoMateria() {
         return codigoMateria;
     }
@@ -87,6 +88,4 @@ public class Materia {
         this.temas = temas;
     }
 
-  
-    
 }

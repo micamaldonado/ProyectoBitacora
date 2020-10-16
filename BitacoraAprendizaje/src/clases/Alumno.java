@@ -12,32 +12,36 @@ import java.util.ArrayList;
  * @author user
  */
 public class Alumno {
+
     private String CI;
     private String nombreAlumno;
     private String apellidoAlumno;
     private String emailAlumno;
     private String contrasenhaAlumno;
-    public ArrayList <Materia> materias;
-    
-    public Alumno (){
-}
+    public ArrayList<Materia> materias;
+
+    public Alumno() {
+    }
 //Constructor
+
     public Alumno(String CI, String nombreAlumno, String apellidoAlumno, String emailAlumno, String contrasenhaAlumno) {
         this.CI = CI;
         this.nombreAlumno = nombreAlumno;
         this.apellidoAlumno = apellidoAlumno;
         this.emailAlumno = emailAlumno;
         this.contrasenhaAlumno = contrasenhaAlumno;
-         materias= new ArrayList();
+        materias = new ArrayList();
     }
 // Imprimir datos del alumno
-     public void imprimirDatoAlumno() {
-        System.out.print("Nombre: " + nombreAlumno); 
-        System.out.print("Apellido: " + apellidoAlumno); 
+
+    public void imprimirDatoAlumno() {
+        System.out.print("Nombre: " + nombreAlumno);
+        System.out.print("Apellido: " + apellidoAlumno);
         System.out.print("E-mail: " + emailAlumno);
-        System.out.print("E-mail: " + contrasenhaAlumno);    
+        System.out.print("E-mail: " + contrasenhaAlumno);
     }
 //Getters y Setters
+
     public String getCI() {
         return CI;
     }
@@ -85,5 +89,5 @@ public class Alumno {
     public void setMaterias(ArrayList<Materia> materias) {
         this.materias = materias;
     }
-    
+
 }
