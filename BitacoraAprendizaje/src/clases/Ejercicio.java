@@ -10,5 +10,8 @@ package clases;
  * @author user
  */
 public class Ejercicio {
-    
+    private String tiempoDedicadoEj;  
+
+public Ejercicio() {
+    }
 }
