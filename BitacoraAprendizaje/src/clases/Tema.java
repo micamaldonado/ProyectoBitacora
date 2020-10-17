@@ -40,9 +40,9 @@ public class Tema {
 
     //Imprimir datos básicos del tema
     public void imprimirDatoTema() {
-        System.out.print("Código: " + codigoTema); //SALTO
-        System.out.print("Nombre: " + nombreTema); //SALTO
-        System.out.print("Fecha: " + fechaTema); //SALTO
+        System.out.print("Código: " + codigoTema + '\n');
+        System.out.print("Nombre: " + nombreTema + '\n');
+        System.out.print("Fecha: " + fechaTema + '\n');
         //VER SI HACE FALTA IMPRIMIR SUS ARRAYS?
     }
 
@@ -79,7 +79,24 @@ public class Tema {
 
     //Registrar Ejercicio
     public void registrarEjercicio() {
-        //VER DE MICA
+
+        //Aca no falta algún nombre tbn????????????????????????
+        System.out.println("Ingrese el tiempo dedicado al ejercicio: ");
+        String tiempoDedicadoEj = entrada.nextLine();
+        System.out.println("Ingrese su experiencia: ");
+        String experiencia = entrada.nextLine();
+        System.out.println("Ingrese sus dudas acerca del ejercicio: ");
+        String dudasEj = entrada.nextLine();
+        //Este no debe ser double-------------????
+        System.out.println("Ingrese aquí el porcentaje logrado: ");
+        String porcLogrado = entrada.nextLine();
+        System.out.println("");
+
+        Ejercicio unEjercicio = new Ejercicio(tiempoDedicadoEj, experiencia, dudasEj, porcLogrado);
+        this.ejercicios.add(unEjercicio);
+
+        System.out.println("¡LOS DATOS DE EJERCICIOS HAN SIDO CARGADOS SATISFACTORIAMENTE!");
+        System.out.println();
     }
 
     //Registrar Investigacion

@@ -30,10 +30,10 @@ public class Conocimiento {
 
     //Imprimir datos de cada conocimiento
     public void imprimirDatoConocimiento() {
-        System.out.print("Concepto: " + conceptoConocimiento); //SALTO
-        System.out.print("Descripcion: " + descripcionConocimiento); //SALTO
-        System.out.print("Dudas: " + dudasConocimiento); //SALTO
-        System.out.print("¿Aprendido?: " + aprendido); //SALTO
+        System.out.print("Concepto: " + conceptoConocimiento + '\n');
+        System.out.print("Descripcion: " + descripcionConocimiento + '\n');
+        System.out.print("Dudas: " + dudasConocimiento + '\n');
+        System.out.print("¿Aprendido?: " + aprendido + '\n');
     }
 
     //Getters y setters
@@ -67,5 +67,5 @@ public class Conocimiento {
 
     public void setAprendido(boolean aprendido) {
         this.aprendido = aprendido;
-    }    
+    }
 }

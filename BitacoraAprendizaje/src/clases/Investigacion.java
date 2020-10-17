@@ -33,11 +33,11 @@ public class Investigacion {
 
     //Imprimir datos de cada investigacion
     public void imprimirDatoInvestigacion() {
-        System.out.print("Tema: " + temaInvestigado); //SALTO
-        System.out.print("Tiempo: " + tiempoDedicadoInv); //SALTO
-        System.out.print("Dudas: " + dudasInvestigacion); //SALTO
-        System.out.print("Comentarios: " + comentarios); //SALTO
-        System.out.print("Comprension: " + nivelComprension); //SALTO
+        System.out.print("Tema: " + temaInvestigado + '\n');
+        System.out.print("Tiempo: " + tiempoDedicadoInv + '\n');
+        System.out.print("Dudas: " + dudasInvestigacion + '\n');
+        System.out.print("Comentarios: " + comentarios + '\n');
+        System.out.print("Comprension: " + nivelComprension + '\n');
     }
 
     //Getters y setters
