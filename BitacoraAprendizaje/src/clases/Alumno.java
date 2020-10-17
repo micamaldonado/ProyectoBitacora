@@ -35,10 +35,11 @@ public class Alumno {
 // Imprimir datos del alumno
 
     public void imprimirDatoAlumno() {
+        System.out.print("CI: " + CI);
         System.out.print("Nombre: " + nombreAlumno);
         System.out.print("Apellido: " + apellidoAlumno);
         System.out.print("E-mail: " + emailAlumno);
-        System.out.print("E-mail: " + contrasenhaAlumno);
+        System.out.print("Contraseña: " + contrasenhaAlumno);
     }
 //Getters y Setters
 

@@ -20,7 +20,7 @@ public class Materia {
 
     public Materia() {
     }
-//Constructor
+    //Constructor
 
     public Materia(String codigoMateria, String nombreMateria) {
         this.codigoMateria = codigoMateria;
