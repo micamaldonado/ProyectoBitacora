@@ -30,7 +30,7 @@ public class Alumno {
         this.apellidoAlumno = apellidoAlumno;
         this.emailAlumno = emailAlumno;
         this.contrasenhaAlumno = contrasenhaAlumno;
-        materias = new ArrayList();
+        //materias = new ArrayList();
     }
 // Imprimir datos del alumno
 
