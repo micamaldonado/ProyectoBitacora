@@ -29,10 +29,54 @@ public class Materia {
         temas = new ArrayList();
     }
 
+//Registrar temas
+    public void registrarTema() {
+        System.out.println("Ingrese la fecha: ");
+        String fechaTema = entrada.nextLine();
+        System.out.println("Ingrese el código del tema: ");
+        String codigoTema = entrada.nextLine();
+        System.out.println("Ingrese el nombre del tema: ");
+        String nombreTema = entrada.nextLine();
+        System.out.println("");
+
+        Tema unTema = new Tema(fechaTema, codigoTema, nombreTema);
+        this.temas.add(unTema);
+
+        System.out.println("¡LOS DATOS DEL TEMA HAN SIDO CARGADOS SATISFACTORIAMENTE!");
+        System.out.println();
+    }
+
     //Imprimir datos de las materias
     public void imprimirDatoMateria() {
-        System.out.print("Código: " + codigoMateria);
-        System.out.print("Nombre: " + nombreMateria);
+        System.out.println("Código: " + codigoMateria);
+        System.out.println("Nombre: " + nombreMateria);
+    }
+
+    //Buscar tema
+    public Tema buscarTema(String codigoMateria) {
+        Tema unTema;
+        for (int i = 0; i < temas.size(); i++) {
+            unTema = temas.get(i);
+            if (codigoMateria.equals(unTema.getCodigoTema())) {
+                return unTema;
+            }
+        }
+        return null;
+    }
+
+    //REGISTRAR TEMA A MATERIA
+    public void RegistrarTemaporMateria() {
+        System.out.println("Ingrese el código del tema: ");
+        String codigoTema = entrada.nextLine();
+        Tema unTema = buscarTema(codigoTema);
+        if (unTema != null) {
+            unTema.imprimirDatoTema();
+            unTema = new Tema();
+            this.temas.add(unTema);
+            System.out.println("Se ha registrado un nuevo tema en la materia");
+        } else {
+            System.out.println("El código no existe. Verifique he intente nuevamente");
+        }
     }
 
     //Buscar temas por materia
@@ -49,23 +93,6 @@ public class Materia {
                 }
             }
         }
-    }
-
-    //Registrar temas
-    public void registrarTema() {
-        System.out.println("Ingrese la fecha: ");
-        String fechaTema = entrada.nextLine();
-        System.out.println("Ingrese el código del tema: ");
-        String codigoTema = entrada.nextLine();
-        System.out.println("Ingrese el nombre del tema: ");
-        String nombreTema = entrada.nextLine();
-        System.out.println("");
-
-        Tema unTema = new Tema(fechaTema, codigoTema, nombreTema);
-        this.temas.add(unTema);
-
-        System.out.println("¡LOS DATOS DEL TEMA HAN SIDO CARGADOS SATISFACTORIAMENTE!");
-        System.out.println();
     }
 
     //Getters y Setters

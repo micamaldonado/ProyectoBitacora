@@ -23,7 +23,7 @@ public class GestionBitacora {
         //VER DATOS POR DEFECTO
         this.materias = new ArrayList();
         this.alumnos = new ArrayList();
-       
+
     }
 
     //Metodos void para datos por defecto en caso de ser necesarios
@@ -98,28 +98,38 @@ public class GestionBitacora {
         if (unAlumno != null) {
             System.out.println("Ingrese el código de la materia: ");
             String codigoMateria = entrada.nextLine();
-            Materia  unaMateria = buscarMateria(codigoMateria);
-            unaMateria.imprimirDatoMateria();          
-            unaMateria = new Materia(CI,codigoMateria);
+            Materia unaMateria = buscarMateria(codigoMateria);
+            unaMateria.imprimirDatoMateria();
+            unaMateria = new Materia(CI, codigoMateria);
             this.materias.add(unaMateria);
             System.out.println("Se ha registrado la materia");
         } else {
             System.out.println("El número de CI ingresado no existe. Verifique he intente nuevamente");
         }
     }
-    
-    
-    //Imprimir materias por alumnos / NO SÉ SI ES NECESARIO
+
+    //ASIGNAR TEMA A MATERIA
+    public void RegistrarTemaMateria() {
+        System.out.println("Código de la materia");
+        String codigoMateria = entrada.nextLine();
+        Materia unaMateria = buscarMateria(codigoMateria);
+        if (unaMateria != null) {
+            unaMateria.RegistrarTemaporMateria();
+        } else {
+            System.out.println("El código ingresado no existe");
+        }
+    }
+
+    //Imprimir las materias del alumno / NO SÉ SI ES NECESARIO
     public void ImprimirMateriaAlumno() {
         Materia unaMateria = new Materia();
-        System.out.println("Las materias del Alumno/a: ");
         System.out.println("CI del alumno: ");
         String CI = entrada.nextLine();
         Alumno unAlumno = buscarAlumno(CI);
         if (unAlumno != null) {
             System.out.println("Materias de: " + unAlumno.getNombreAlumno() + ": " + unaMateria.getNombreMateria());
             this.materias.add(unaMateria);
-            
+
         } else {
             System.out.println("El número de CI ingresado no existe. Verifique he intente nuevamente");
         }
