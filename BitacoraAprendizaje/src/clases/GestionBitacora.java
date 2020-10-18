@@ -21,11 +21,13 @@ public class GestionBitacora {
     //Constructor vacío
     public GestionBitacora() {
         //VER DATOS POR DEFECTO
+        this.materias = new ArrayList();
+        this.alumnos = new ArrayList();
+       
     }
 
     //Metodos void para datos por defecto en caso de ser necesarios
     //------------
-    
     //Registrar Alumno
     public void registrarAlumno() {
         System.out.println("Ingrese el CI del alumno: ");
@@ -86,5 +88,34 @@ public class GestionBitacora {
     }
 
     //Asignar materia a }
-    //aSIGNAR TEMAS  MATERIAS    
+    //aSIGNAR TEMAS  MATERIAS  
+    
+    //Imprimir materias por alumnos
+    public void ImprimirMateriaAlumno() {
+        Materia unaMateria = new Materia();
+        System.out.println("Las materias del Alumno/a: ");
+        System.out.println("CI del alumno: ");
+        String CI = entrada.nextLine();
+        Alumno unAlumno = buscarAlumno(CI);
+        if (unAlumno != null) {
+            System.out.println("Materias de: " + unAlumno.getNombreAlumno() + ": " + unaMateria.getNombreMateria());
+            this.materias.add(unaMateria);
+            
+        } else {
+            System.out.println("El número de CI ingresado no existe. Verifique he intente nuevamente");
+        }
+    }
+
+    //Imprimir datos de Temas por Materias ??
+    public void imprimirListaTemaMateria() {
+        System.out.print("Código de la materia: ");
+        String codigoMateria = entrada.nextLine();
+        Materia unaMateria = buscarMateria(codigoMateria);
+        if (unaMateria != null) {
+            unaMateria.imprimirTemaMateria();
+        } else {
+            System.out.println("El código ingresado no existe");
+        }
+    }
+
 }

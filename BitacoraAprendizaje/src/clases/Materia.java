@@ -5,8 +5,8 @@
  */
 package clases;
 
-import static clases.Tema.entrada;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -14,8 +14,9 @@ import java.util.ArrayList;
  */
 public class Materia {
 
-    private String codigoMateria;
-    private String nombreMateria;
+    static Scanner entrada = new Scanner(System.in);
+    String codigoMateria;
+    String nombreMateria;
     public ArrayList<Tema> temas;
 
     public Materia() {
@@ -27,36 +28,40 @@ public class Materia {
         this.nombreMateria = nombreMateria;
         temas = new ArrayList();
     }
-//Ver imprimirTemaMateria
 
-    // Imprimir datos de las materias
+    //Imprimir datos de las materias
     public void imprimirDatoMateria() {
         System.out.print("Código: " + codigoMateria);
         System.out.print("Nombre: " + nombreMateria);
     }
-//Imprimir Temas de Materias ??
-//      public void imprimirTemaMateria() {
-//           System.out.print("Nombre de la materia: ");
-//        String nombreMateria = entrada.nextLine();
-//        Materia unaMateria = buscarTemaMateria(nombreMateria);
-//    if (unaMateria != null) {
-//            unaMateria.imprimirTemaMateria();
-//        } else {
-//            System.out.println("El nombre ingresado no existe");
-//        }
-//    }
+
+    //Buscar temas por materia
+    public void imprimirTemaMateria() {
+        System.out.println();
+        if (temas.size() > 0) {
+            System.out.println("Los temas de la materia son:");
+            for (int cont = 0; cont < temas.size(); cont++) {
+                Tema unTema = temas.get(cont);
+                if (unTema != null) { //VER
+                    System.out.println("En fecha: " + unTema.getFechaTema() + "Código del tema: " + unTema.getCodigoTema() + "Nombre del tema: " + unTema.getNombreTema());
+                } else {
+                    System.out.println("La materia todavía no tiene ningún tema");
+                }
+            }
+        }
+    }
 
     //Registrar temas
     public void registrarTema() {
+        System.out.println("Ingrese la fecha: ");
+        String fechaTema = entrada.nextLine();
         System.out.println("Ingrese el código del tema: ");
         String codigoTema = entrada.nextLine();
         System.out.println("Ingrese el nombre del tema: ");
         String nombreTema = entrada.nextLine();
-        System.out.println("Ingrese la fecha: ");
-        String fechaTema = entrada.nextLine();
         System.out.println("");
 
-        Tema unTema = new Tema(codigoTema, nombreTema, fechaTema);
+        Tema unTema = new Tema(fechaTema, codigoTema, nombreTema);
         this.temas.add(unTema);
 
         System.out.println("¡LOS DATOS DEL TEMA HAN SIDO CARGADOS SATISFACTORIAMENTE!");
