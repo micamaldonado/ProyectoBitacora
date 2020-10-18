@@ -11,6 +11,7 @@ package clases;
  */
 public class Conocimiento {
 
+    String codigoConocimiento;
     String conceptoConocimiento;
     String descripcionConocimiento;
     String dudasConocimiento;
@@ -21,7 +22,8 @@ public class Conocimiento {
     }
 
     //Constructor con parametros
-    public Conocimiento(String conceptoConocimiento, String descripcionConocimiento, String dudasConocimiento, boolean aprendido) {
+    public Conocimiento(String codigoConocimiento, String conceptoConocimiento, String descripcionConocimiento, String dudasConocimiento, boolean aprendido) {
+        this.codigoConocimiento = codigoConocimiento;
         this.conceptoConocimiento = conceptoConocimiento;
         this.descripcionConocimiento = descripcionConocimiento;
         this.dudasConocimiento = dudasConocimiento;
@@ -30,6 +32,7 @@ public class Conocimiento {
 
     //Imprimir datos de cada conocimiento
     public void imprimirDatoConocimiento() {
+        System.out.println("Codigo: " + codigoConocimiento + '\n');
         System.out.print("Concepto: " + conceptoConocimiento + '\n');
         System.out.print("Descripcion: " + descripcionConocimiento + '\n');
         System.out.print("Dudas: " + dudasConocimiento + '\n');
@@ -37,6 +40,14 @@ public class Conocimiento {
     }
 
     //Getters y setters
+    public String getCodigoConocimiento() {
+        return codigoConocimiento;
+    }
+
+    public void setCodigoConocimiento(String codigoConocimiento) {
+        this.codigoConocimiento = codigoConocimiento;
+    }
+
     public String getConceptoConocimiento() {
         return conceptoConocimiento;
     }
