@@ -80,19 +80,19 @@ public class Tema {
     //Registrar Ejercicio
     public void registrarEjercicio() {
 
-        //Aca no falta algún nombre tbn????????????????????????
+        System.out.println("Ingrese el código: ");
+        String codigoEj = entrada.nextLine();
         System.out.println("Ingrese el tiempo dedicado al ejercicio: ");
         String tiempoDedicadoEj = entrada.nextLine();
         System.out.println("Ingrese su experiencia: ");
         String experiencia = entrada.nextLine();
         System.out.println("Ingrese sus dudas acerca del ejercicio: ");
         String dudasEj = entrada.nextLine();
-        //Este no debe ser double-------------????
         System.out.println("Ingrese aquí el porcentaje logrado: ");
-        String porcLogrado = entrada.nextLine();
+        double porcLogrado = entrada.nextDouble();
         System.out.println("");
 
-        Ejercicio unEjercicio = new Ejercicio(tiempoDedicadoEj, experiencia, dudasEj, porcLogrado);
+        Ejercicio unEjercicio = new Ejercicio(codigoEj, tiempoDedicadoEj, experiencia, dudasEj, porcLogrado);
         this.ejercicios.add(unEjercicio);
 
         System.out.println("¡LOS DATOS DE EJERCICIOS HAN SIDO CARGADOS SATISFACTORIAMENTE!");
@@ -102,6 +102,8 @@ public class Tema {
     //Registrar Investigacion
     public void registrarInvestigacion() {
 
+        System.out.println("Ingrese el código: ");
+        String codigoInvestigacion = entrada.nextLine();
         System.out.println("Ingrese el tema investigado: ");
         String temaInvestigado = entrada.nextLine();
         System.out.println("Ingrese el tiempo dedicado a la investigación: ");
@@ -114,7 +116,7 @@ public class Tema {
         double nivelComprension = entrada.nextDouble();
         System.out.println("");
 
-        Investigacion unaInvestigacion = new Investigacion(temaInvestigado, tiempoDedicadoInv, comentarios, dudasInvestigacion, nivelComprension);
+        Investigacion unaInvestigacion = new Investigacion(codigoInvestigacion, temaInvestigado, tiempoDedicadoInv, comentarios, dudasInvestigacion, nivelComprension);
         this.investigaciones.add(unaInvestigacion);
 
         System.out.println("¡LOS DATOS DE INVESTIGACIÓN HAN SIDO CARGADOS SATISFACTORIAMENTE!");
@@ -123,6 +125,8 @@ public class Tema {
 
     //Registrar Conocimiento
     public void registrarConocimiento() {
+        System.out.println("Ingrese el código del conocimiento: ");
+        String codigoConocimiento = entrada.nextLine();
         System.out.println("Ingrese el concepto desarrollado: ");
         String conceptoConocimiento = entrada.nextLine();
         System.out.println("Ingrese la descripcion del mismo: ");
@@ -132,7 +136,7 @@ public class Tema {
         System.out.println("Introduzca si ha aprendido o no el concepto: ");
         boolean aprendido = entrada.nextBoolean(); //COMO FORZAR CON PALABRAS.........
 
-        Conocimiento unConocimiento = new Conocimiento(conceptoConocimiento, descripcionConocimiento, dudasConocimiento, aprendido);
+        Conocimiento unConocimiento = new Conocimiento(codigoConocimiento, conceptoConocimiento, descripcionConocimiento, dudasConocimiento, aprendido);
         this.conocimientos.add(unConocimiento);
 
         System.out.println("¡LOS DATOS HAN SIDO CARGADOS SATISFACTORIAMENTE!");
