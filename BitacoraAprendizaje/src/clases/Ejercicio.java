@@ -10,17 +10,22 @@ package clases;
  * @author user
  */
 public class Ejercicio {
+//codigo
+    //quitar los privates
+    //asignar hacer
 
-    private String tiempoDedicadoEj;
-    private String experiencia;
-    private String dudasEj;
-    private String porcLogrado;
+    String codigoEj;
+    String tiempoDedicadoEj;
+    String experiencia;
+    String dudasEj;
+    Double porcLogrado;
 
     public Ejercicio() {
     }
 //Constructor
 
-    public Ejercicio(String tiempoDedicadoEj, String experiencia, String dudasEj, String porcLogrado) {
+    public Ejercicio(String codigoEj, String tiempoDedicadoEj, String experiencia, String dudasEj, Double porcLogrado) {
+        this.codigoEj = codigoEj;
         this.tiempoDedicadoEj = tiempoDedicadoEj;
         this.experiencia = experiencia;
         this.dudasEj = dudasEj;
@@ -37,6 +42,14 @@ public class Ejercicio {
     }
 
 //Getters y Setters
+    public String getCodigoEj() {
+        return codigoEj;
+    }
+
+    public void setCodigoEj(String codigoEj) {
+        this.codigoEj = codigoEj;
+    }
+
     public String getTiempoDedicadoEj() {
         return tiempoDedicadoEj;
     }
@@ -61,11 +74,11 @@ public class Ejercicio {
         this.dudasEj = dudasEj;
     }
 
-    public String getPorcLogrado() {
+    public Double getPorcLogrado() {
         return porcLogrado;
     }
 
-    public void setPorcLogrado(String porcLogrado) {
+    public void setPorcLogrado(Double porcLogrado) {
         this.porcLogrado = porcLogrado;
     }
 
