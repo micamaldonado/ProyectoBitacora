@@ -5,11 +5,15 @@
  */
 package clases;
 
+import java.util.Scanner;
+
 /**
  *
  * @author user
  */
 public class Investigacion {
+
+    static Scanner entrada = new Scanner(System.in);
 
     String codigoInvestigacion;
     String tiempoDedicadoInv;
@@ -40,6 +44,11 @@ public class Investigacion {
         System.out.print("Dudas: " + dudasInvestigacion + '\n');
         System.out.print("Comentarios: " + comentarios + '\n');
         System.out.print("Comprension: " + nivelComprension + '\n');
+    }
+
+    //Cambiar estado de aprendido
+    public void cambiarNivelInvestigacion(double nuevoNivelComprension) {
+        //NO SE ME OCURRE COMO :(
     }
 
     //Getters y setters

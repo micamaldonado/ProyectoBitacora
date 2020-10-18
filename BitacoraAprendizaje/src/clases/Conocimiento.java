@@ -39,6 +39,18 @@ public class Conocimiento {
         System.out.print("¿Aprendido?: " + aprendido + '\n');
     }
 
+    //Cambiar estado de aprendido
+    public void cambiarEstadoAprendido(String codigoConocimiento) {
+        imprimirDatoConocimiento();
+        if (aprendido == false) {
+            aprendido = true;
+            System.out.println("El estado Aprendido ha cambiado \"Sí\"");
+        } else {
+            aprendido = false;
+            System.out.println("El estado Aprendido ha cambiado \"No\"");
+        }
+    }
+
     //Getters y setters
     public String getCodigoConocimiento() {
         return codigoConocimiento;
