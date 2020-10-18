@@ -18,13 +18,13 @@ public class Ejercicio {
     String tiempoDedicadoEj;
     String experiencia;
     String dudasEj;
-    Double porcLogrado;
+    double porcLogrado;
 
     public Ejercicio() {
     }
 //Constructor
 
-    public Ejercicio(String codigoEj, String tiempoDedicadoEj, String experiencia, String dudasEj, Double porcLogrado) {
+    public Ejercicio(String codigoEj, String tiempoDedicadoEj, String experiencia, String dudasEj, double porcLogrado) {
         this.codigoEj = codigoEj;
         this.tiempoDedicadoEj = tiempoDedicadoEj;
         this.experiencia = experiencia;
@@ -74,11 +74,11 @@ public class Ejercicio {
         this.dudasEj = dudasEj;
     }
 
-    public Double getPorcLogrado() {
+    public double getPorcLogrado() {
         return porcLogrado;
     }
 
-    public void setPorcLogrado(Double porcLogrado) {
+    public void setPorcLogrado(double porcLogrado) {
         this.porcLogrado = porcLogrado;
     }
 
