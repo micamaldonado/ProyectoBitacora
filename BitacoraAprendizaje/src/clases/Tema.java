@@ -143,10 +143,11 @@ public class Tema {
         System.out.println();
     }
 
+    //Asignar investigacion a tema
     public void registrarInvestigacionxTema() {
         System.out.println("Ingrese el código de la investigacion: ");
-        String codigoInvestigacion = entrada.nextLine();        
-        Investigacion unaInvestigacion = buscarInvestigacion (codigoInvestigacion); 
+        String codigoInvestigacion = entrada.nextLine();
+        Investigacion unaInvestigacion = buscarInvestigacion(codigoInvestigacion);
         if (unaInvestigacion != null) {
             unaInvestigacion.imprimirDatoInvestigacion();
             unaInvestigacion = new Investigacion();
@@ -157,12 +158,68 @@ public class Tema {
         }
     }
 
+    //Buscar investigacion
     public Investigacion buscarInvestigacion(String codigoInvestigacion) {
         Investigacion unaInvestigacion;
         for (int i = 0; i < investigaciones.size(); i++) {
             unaInvestigacion = investigaciones.get(i);
             if (codigoInvestigacion.equals(unaInvestigacion.getCodigoInvestigacion())) {
                 return unaInvestigacion;
+            }
+        }
+        return null;
+    }
+    
+     //Asignar conocimiento a tema
+    public void registrarConcimientoxTema() {
+        System.out.println("Ingrese el código del conocimiento: ");
+        String codigoConocimiento = entrada.nextLine();
+        Conocimiento unConocimiento = buscarConocimiento(codigoConocimiento);
+        if (unConocimiento != null) {
+            unConocimiento.imprimirDatoConocimiento();
+            unConocimiento = new Conocimiento();
+            this.conocimientos.add(unConocimiento);
+            System.out.println("Se ha registrado un conocimiento.");
+        } else {
+            System.out.println("El código no existe. Verifique e intente nuevamente");
+        }
+    }
+
+    //Buscar conocimiento
+    public Conocimiento buscarConocimiento(String codigoConocimiento) {
+        Conocimiento unConocimiento;
+        for (int i = 0; i < conocimientos.size(); i++) {
+            unConocimiento = conocimientos.get(i);
+            if (codigoConocimiento.equals(unConocimiento.getCodigoConocimiento())) {
+                return unConocimiento;
+            }
+        }
+        return null;
+    }
+    
+    //Asignar ejercicio a tema
+    public void registrarEjercicioxTema() {
+        System.out.println("Ingrese el código del ejercicio: ");
+        String codigoEjercicio = entrada.nextLine();
+        Ejercicio unEjercicio = buscarEjercicio(codigoEjercicio);        
+        if (unEjercicio != null) {
+            unEjercicio.ImprimirDatoEjercicio();
+            unEjercicio = new Ejercicio();
+            this.ejercicios.add(unEjercicio);
+            System.out.println("Se ha registrado un ejercicio nuevo.");
+        } else {
+            System.out.println("El código no existe. Verifique e intente nuevamente");
+        }
+    }
+    
+
+    //Buscar ejercicio 
+    public Ejercicio buscarEjercicio(String codigoEjercicio) {
+        Ejercicio unEjercicio;
+        for (int i = 0; i < ejercicios.size(); i++) {
+            unEjercicio = ejercicios.get(i);
+            if (codigoEjercicio.equals(unEjercicio.getCodigoEj())) {
+                return unEjercicio;
             }
         }
         return null;
