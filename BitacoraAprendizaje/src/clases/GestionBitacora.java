@@ -104,7 +104,7 @@ public class GestionBitacora {
             this.materias.add(unaMateria);
             System.out.println("Se ha registrado la materia");
         } else {
-            System.out.println("El número de CI ingresado no existe. Verifique he intente nuevamente");
+            System.out.println("El número de CI ingresado no existe. Verifique e intente nuevamente");
         }
     }
 
@@ -131,7 +131,7 @@ public class GestionBitacora {
             this.materias.add(unaMateria);
 
         } else {
-            System.out.println("El número de CI ingresado no existe. Verifique he intente nuevamente");
+            System.out.println("El número de CI ingresado no existe. Verifique e intente nuevamente");
         }
     }
 

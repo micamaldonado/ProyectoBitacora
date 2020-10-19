@@ -143,6 +143,31 @@ public class Tema {
         System.out.println();
     }
 
+    public void registrarInvestigacionxTema() {
+        System.out.println("Ingrese el código de la investigacion: ");
+        String codigoInvestigacion = entrada.nextLine();        
+        Investigacion unaInvestigacion = buscarInvestigacion (codigoInvestigacion); 
+        if (unaInvestigacion != null) {
+            unaInvestigacion.imprimirDatoInvestigacion();
+            unaInvestigacion = new Investigacion();
+            this.investigaciones.add(unaInvestigacion);
+            System.out.println("Se ha registrado una investigacion para el tema");
+        } else {
+            System.out.println("El código no existe. Verifique e intente nuevamente");
+        }
+    }
+
+    public Investigacion buscarInvestigacion(String codigoInvestigacion) {
+        Investigacion unaInvestigacion;
+        for (int i = 0; i < investigaciones.size(); i++) {
+            unaInvestigacion = investigaciones.get(i);
+            if (codigoInvestigacion.equals(unaInvestigacion.getCodigoInvestigacion())) {
+                return unaInvestigacion;
+            }
+        }
+        return null;
+    }
+
     //Getters y setters
     public String getCodigoTema() {
         return codigoTema;

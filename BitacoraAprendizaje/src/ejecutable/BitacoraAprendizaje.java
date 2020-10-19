@@ -6,6 +6,7 @@
 package ejecutable;
 
 import clases.GestionBitacora;
+import clases.Tema;
 import java.util.Scanner;
 
 /**
@@ -16,6 +17,7 @@ public class BitacoraAprendizaje {
 
     static Scanner entrada = new Scanner(System.in);
     private static GestionBitacora unaGestionBitacora = new GestionBitacora();
+    private static Tema unTema = new Tema();
 
     /**
      * @param args the command line arguments
@@ -50,15 +52,15 @@ public class BitacoraAprendizaje {
                     break;
                 case 3:
                     System.out.println("**************REGISTRAR NUEVA INVESTIGACION**************");
-                    //metodo
+                    unTema.registrarInvestigacion();
                     break;
                 case 4:
                     System.out.println("**************REGISTRAR NUEVO CONOCIMIENTO**************");
-                    //metodo
+                    unTema.registrarConocimiento();
                     break;
                 case 5:
                     System.out.println("**************REGISTRAR NUEVO EJERCICIO**************");
-                    //metodo
+                    unTema.registrarEjercicio();
                     break;
                 case 6:
                     System.out.println("**************LISTA DE TEMAS PENDIENTE POR ALUMNO**************");
