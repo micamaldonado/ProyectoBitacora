@@ -153,9 +153,15 @@ public class GestionBitacora {
         Materia unaMateria = buscarMateria(codigoMateria);
         if (unaMateria != null) {
             unaMateria.imprimirTemaMateria();
+            System.out.println("Ingrese el código del tema que desea ver: ");
+            String codigoTema = entrada.nextLine();
+            Tema unTema = unaMateria.buscarTema(codigoTema);
+            //METODO SUBMENUS                    
         } else {
             System.out.println("El código ingresado no existe");
         }
     }
+    
+    //metodos submenus
 
 }
