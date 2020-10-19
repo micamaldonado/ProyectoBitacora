@@ -35,14 +35,13 @@ public class Alumno {
 // Imprimir datos del alumno
 
     public void imprimirDatoAlumno() {
-        System.out.print("CI: " + CI);
-        System.out.print("Nombre: " + nombreAlumno);
-        System.out.print("Apellido: " + apellidoAlumno);
-        System.out.print("E-mail: " + emailAlumno);
-        System.out.print("Contraseña: " + contrasenhaAlumno);
+        System.out.print("CI: " + CI + '\n');
+        System.out.print("Nombre: " + nombreAlumno + '\n');
+        System.out.print("Apellido: " + apellidoAlumno + '\n');
+        System.out.print("E-mail: " + emailAlumno + '\n');
+        System.out.print("Contraseña: " + contrasenhaAlumno + '\n');
     }
 //Getters y Setters
-
     public String getCI() {
         return CI;
     }

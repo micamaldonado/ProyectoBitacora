@@ -5,6 +5,7 @@
  */
 package ejecutable;
 
+import clases.Alumno;
 import clases.GestionBitacora;
 import clases.Tema;
 import java.util.Scanner;
@@ -27,14 +28,10 @@ public class BitacoraAprendizaje {
         do {
             System.out.println();
             System.out.println("BIENVENIDO A LA GESTION DE BITACORA DE APRENDIZAJE");
+            System.out.println("**********************INICIO**********************");
             System.out.println("1. Registrar nuevo alumno");
-            System.out.println("2. Registrar nueva materia");
-            System.out.println("3. Registrar nueva investigación");
-            System.out.println("4. Registrar nuevo conocimiento");
-            System.out.println("5. Registrar nuevo ejercicio");
-            System.out.println("6. Imprimir lista de temas pendientes por alumno");
-            //Asignaciones?
-            System.out.println("7. Salir");
+            System.out.println("2. Ingresar por CI");
+            System.out.println("3. Salir del sistema");
             System.out.println();
             System.out.print("Ingrese el número de la opción elegida: ");
             opcion = entrada.nextInt();
@@ -44,35 +41,38 @@ public class BitacoraAprendizaje {
             switch (opcion) {
                 case 1:
                     System.out.println("**************REGISTRAR NUEVO ALUMNO**************");
-                    unaGestionBitacora.registrarAlumno();
+                    registrarNuevoAlumno();
                     break;
                 case 2:
-                    System.out.println("**************REGISTRAR NUEVA MATERIA**************");
-                    unaGestionBitacora.registrarMateria();
+                    System.out.println("**************INGRESAR POR NÚMERO DE CI**************");
+                    ingresarAlumno();
                     break;
                 case 3:
-                    System.out.println("**************REGISTRAR NUEVA INVESTIGACION**************");
-                    unTema.registrarInvestigacion();
-                    break;
-                case 4:
-                    System.out.println("**************REGISTRAR NUEVO CONOCIMIENTO**************");
-                    unTema.registrarConocimiento();
-                    break;
-                case 5:
-                    System.out.println("**************REGISTRAR NUEVO EJERCICIO**************");
-                    unTema.registrarEjercicio();
-                    break;
-                case 6:
-                    System.out.println("**************LISTA DE TEMAS PENDIENTE POR ALUMNO**************");
-                    //metodo
-                    break;
-                case 7:
                     System.out.println("Usted ha decidido salir del sistema");
                     break;
                 default:
                     System.out.println("Opción incorrecta. Inténtelo de nuevo");
             }
-        } while (opcion != 7);
+        } while (opcion != 3);
+    }
+
+    public static void registrarNuevoAlumno() {
+        unaGestionBitacora.registrarAlumno();
+        System.out.println();
+        System.out.println("Presione cualquier tecla para continuar: ");
+        entrada.nextLine();
+    }
+
+    public static void ingresarAlumno() {
+        unaGestionBitacora.ImprimirMateriaAlumno();
+        System.out.println();
+        System.out.println("¿Desea agregar una nueva materia? S: Sí, N: NO");
+        String opcion = entrada.nextLine();
+        if ("S".equals(opcion)) {
+            unaGestionBitacora.registrarMateria();
+        }
+        System.out.println("Presione cualquier tecla para continuar: ");
+        entrada.nextLine();
     }
 
 }

@@ -88,10 +88,10 @@ public class Materia {
                 Tema unTema = temas.get(cont);
                 if (unTema != null) { //VER
                     System.out.println("En fecha: " + unTema.getFechaTema() + "Código del tema: " + unTema.getCodigoTema() + "Nombre del tema: " + unTema.getNombreTema());
-                } else {
-                    System.out.println("La materia todavía no tiene ningún tema");
-                }
+                } 
             }
+        }else{
+            System.out.println("La materia no posee temas");
         }
     }
 

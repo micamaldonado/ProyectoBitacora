@@ -89,7 +89,6 @@ public class GestionBitacora {
 
     //Asignar materia a }
     //aSIGNAR TEMAS  MATERIAS 
-    
 //Ingresar la materia del alumno /ASIGNAR ??
     public void RegistrarMateriaAlumno() {
         System.out.println("CI del alumno/a");
@@ -120,22 +119,34 @@ public class GestionBitacora {
         }
     }
 
-    //Imprimir las materias del alumno / NO SÉ SI ES NECESARIO
+    //Imprimir las materias del alumno
     public void ImprimirMateriaAlumno() {
         Materia unaMateria = new Materia();
         System.out.println("CI del alumno: ");
         String CI = entrada.nextLine();
         Alumno unAlumno = buscarAlumno(CI);
         if (unAlumno != null) {
-            System.out.println("Materias de: " + unAlumno.getNombreAlumno() + ": " + unaMateria.getNombreMateria());
-            this.materias.add(unaMateria);
-
+            unAlumno.imprimirDatoAlumno();
+            System.out.println();
+            System.out.println("Materias de: " + unAlumno.getNombreAlumno());
+            if (materias.size() > 0) {
+                for (int i = 0; i < materias.size(); i++) {                    
+                    System.out.println((i + 1) + ". " + "Código: " + unaMateria.getCodigoMateria()+ "Nombre: " + unaMateria.getNombreMateria());
+                }
+                System.out.println();
+                System.out.println("Elija el código de la materia para listar los temas: ");
+                imprimirListaTemaMateria();
+            } else {
+                System.out.println("No posee ninguna materia.");
+            }
+            //this.materias.add(unaMateria); CREO QUE ESTE NO HACE FALTA ACÁ
         } else {
             System.out.println("El número de CI ingresado no existe. Verifique e intente nuevamente");
         }
+
     }
 
-    //Imprimir datos de Temas por Materias /TAMPOCO SÉ SI ES NECESARIO
+    //Imprimir datos de Temas por Materias
     public void imprimirListaTemaMateria() {
         System.out.print("Código de la materia: ");
         String codigoMateria = entrada.nextLine();
