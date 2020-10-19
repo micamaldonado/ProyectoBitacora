@@ -130,8 +130,8 @@ public class GestionBitacora {
             System.out.println();
             System.out.println("Materias de: " + unAlumno.getNombreAlumno());
             if (materias.size() > 0) {
-                for (int i = 0; i < materias.size(); i++) {                    
-                    System.out.println((i + 1) + ". " + "Código: " + unaMateria.getCodigoMateria()+ "Nombre: " + unaMateria.getNombreMateria());
+                for (int i = 0; i < materias.size(); i++) {
+                    System.out.println((i + 1) + ". " + "Código: " + unaMateria.getCodigoMateria() + "Nombre: " + unaMateria.getNombreMateria());
                 }
                 System.out.println();
                 System.out.println("Elija el código de la materia para listar los temas: ");
@@ -157,11 +157,14 @@ public class GestionBitacora {
             String codigoTema = entrada.nextLine();
             Tema unTema = unaMateria.buscarTema(codigoTema);
             //METODO SUBMENUS                    
+             if (unTema!= null) {
+                 unTema.submenuTema();
+             }
         } else {
             System.out.println("El código ingresado no existe");
         }
     }
-    
-    //metodos submenus
 
+    //metodos submenus
+    
 }

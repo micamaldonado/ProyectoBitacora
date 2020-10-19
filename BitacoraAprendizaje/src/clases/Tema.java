@@ -169,8 +169,8 @@ public class Tema {
         }
         return null;
     }
-    
-     //Asignar conocimiento a tema
+
+    //Asignar conocimiento a tema
     public void registrarConcimientoxTema() {
         System.out.println("Ingrese el código del conocimiento: ");
         String codigoConocimiento = entrada.nextLine();
@@ -196,12 +196,12 @@ public class Tema {
         }
         return null;
     }
-    
+
     //Asignar ejercicio a tema
     public void registrarEjercicioxTema() {
         System.out.println("Ingrese el código del ejercicio: ");
         String codigoEjercicio = entrada.nextLine();
-        Ejercicio unEjercicio = buscarEjercicio(codigoEjercicio);        
+        Ejercicio unEjercicio = buscarEjercicio(codigoEjercicio);
         if (unEjercicio != null) {
             unEjercicio.ImprimirDatoEjercicio();
             unEjercicio = new Ejercicio();
@@ -211,7 +211,6 @@ public class Tema {
             System.out.println("El código no existe. Verifique e intente nuevamente");
         }
     }
-    
 
     //Buscar ejercicio 
     public Ejercicio buscarEjercicio(String codigoEjercicio) {
@@ -223,6 +222,89 @@ public class Tema {
             }
         }
         return null;
+    }
+
+    public void submenuTema() {
+        System.out.println("\"**************TEMA**************\"");
+        System.out.println("Para ver el contenido del tema:  ");
+        int opcion;
+        do {
+            System.out.println("");
+            System.out.println("1. Conocimiento");
+            System.out.println("2. Ejercicio");
+            System.out.println("3. Investigación");
+            System.out.println("Ingrese el número de la opción elegida: ");
+            opcion = entrada.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    System.out.println("Conocimiento");
+                    System.out.println("");
+                    System.out.println("1. Listar conocimientos");
+                    System.out.println("2. Cargar conocimiento ");
+                    System.out.println("3. Cambiar estado de aprendido");
+                    System.out.print("Ingrese el número de la opción elegida: ");
+                    opcion = entrada.nextInt();
+
+                    if (opcion == 1) {
+                        //Lista de conocimiento
+                        //Tema unTema.();//?
+                    } else if (opcion == 2) {
+                        Tema unTema = new Tema();
+                        unTema.registrarConocimiento();
+                    } else if (opcion == 3) {
+                        Conocimiento unConocimiento = new Conocimiento();
+                        unConocimiento.cambiarEstadoAprendido(codigoTema);//VER
+                    } else {
+                        System.out.println("Número ingresado no exite. Intente nuevamente");
+                    }
+                    break;
+                case 2:
+                    System.out.println("Ejercicio");
+                    System.out.println("");
+                    System.out.println("1. Listar ejercicios");
+                    System.out.println("2.Cargar ejercicio ");
+                    System.out.print("Ingrese el número de la opción elegida: ");
+                    opcion = entrada.nextInt();
+
+                    if (opcion == 1) {
+                        //Listar de ejercicio
+                        //Tema unTema.();//?
+                    } else if (opcion == 2) {
+                        Tema unTema = new Tema();
+                        unTema.registrarEjercicio();
+                    } else {
+                        System.out.println("Número ingresado no exite. Intente nuevamente");
+                    }
+
+                    break;
+                case 3:
+                    System.out.println("Investigación");
+                    System.out.println("");
+                    System.out.println("1. Listar investigaciones");
+                    System.out.println("2.Cargar investigación ");
+                    System.out.print("Ingrese el número de la opción elegida: ");
+                    opcion = entrada.nextInt();
+
+                    if (opcion == 1) {
+                        //Lista de conocimiento
+                        //Tema unTema.();//?
+                    } else if (opcion == 2) {
+                        Tema unTema = new Tema();
+                        unTema.registrarInvestigacion();
+                    } else {
+                        System.out.println("Número ingresado no exite. Intente nuevamente");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Usted ha decidido salir del sistema");
+                    break;
+                default:
+                    System.out.println("Opción incorrecta. Inténtelo de nuevo");
+            }
+
+        } while (opcion != 4);
     }
 
     //Getters y setters
