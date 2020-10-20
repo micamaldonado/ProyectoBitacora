@@ -53,11 +53,11 @@ public class Materia {
     }
 
     //Buscar tema
-    public Tema buscarTema(String codigoMateria) {
+    public Tema buscarTema(String codigoTema) {
         Tema unTema;
         for (int i = 0; i < temas.size(); i++) {
             unTema = temas.get(i);
-            if (codigoMateria.equals(unTema.getCodigoTema())) {
+            if (codigoTema.equals(unTema.getCodigoTema())) {
                 return unTema;
             }
         }
@@ -81,16 +81,25 @@ public class Materia {
 
     //Buscar temas por materia
     public void imprimirTemaMateria() {
-        System.out.println();
+        //System.out.println();
         if (temas.size() > 0) {
-            System.out.println("Los temas de la materia son:");
+            //System.out.println("Los temas de la materia son:");
             for (int cont = 0; cont < temas.size(); cont++) {
                 Tema unTema = temas.get(cont);
                 if (unTema != null) { //VER
-                    System.out.println("En fecha: " + unTema.getFechaTema() + "Código del tema: " + unTema.getCodigoTema() + "Nombre del tema: " + unTema.getNombreTema());
-                } 
+                    System.out.println("Fecha: " + unTema.getFechaTema() + " Código del tema: " + unTema.getCodigoTema() + " Nombre del tema: " + unTema.getNombreTema());
+                }
             }
-        }else{
+            System.out.println();
+            System.out.println("Ingrese el código del tema que desea ver: ");
+            String codigoTema = entrada.nextLine();
+            Tema unTema = buscarTema(codigoTema);
+            if (unTema != null) {
+                unTema.submenuTema();
+            }else{
+                System.out.println("El código no existe. Intentelo nuevamente");
+            }
+        } else {
             System.out.println("La materia no posee temas");
         }
     }

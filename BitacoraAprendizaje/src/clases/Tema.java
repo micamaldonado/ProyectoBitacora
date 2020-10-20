@@ -15,6 +15,7 @@ import java.util.Scanner;
 public class Tema {
 
     static Scanner entrada = new Scanner(System.in);
+    Conocimiento unConocimiento = new Conocimiento ();
 
     String codigoTema;
     String nombreTema;
@@ -29,10 +30,10 @@ public class Tema {
     }
 
     //Constructor con parametros
-    public Tema(String codigoTema, String nombreTema, String fechaTema) {
+    public Tema(String fechaTema, String codigoTema, String nombreTema) {
+        this.fechaTema = fechaTema;
         this.codigoTema = codigoTema;
         this.nombreTema = nombreTema;
-        this.fechaTema = fechaTema;
         investigaciones = new ArrayList();
         conocimientos = new ArrayList();
         ejercicios = new ArrayList();
@@ -125,6 +126,7 @@ public class Tema {
 
     //Registrar Conocimiento
     public void registrarConocimiento() {
+        System.out.println();
         System.out.println("Ingrese el código del conocimiento: ");
         String codigoConocimiento = entrada.nextLine();
         System.out.println("Ingrese el concepto desarrollado: ");
@@ -134,8 +136,15 @@ public class Tema {
         System.out.println("Ingrese sus dudas: ");
         String dudasConocimiento = entrada.nextLine();
         System.out.println("Introduzca si ha aprendido o no el concepto: ");
-        boolean aprendido = entrada.nextBoolean(); //COMO FORZAR CON PALABRAS.........
-
+        String stringBoolean = entrada.nextLine();
+        boolean aprendido = false;
+        if ("Si".equals(stringBoolean)) {
+            aprendido = true;
+        }
+//        } else if ("No".equals(stringBoolean)) {
+//            aprendido = false;
+//        }        
+        //boolean aprendido = entrada.nextBoolean(); //COMO FORZAR CON PALABRAS.........
         Conocimiento unConocimiento = new Conocimiento(codigoConocimiento, conceptoConocimiento, descripcionConocimiento, dudasConocimiento, aprendido);
         this.conocimientos.add(unConocimiento);
 
@@ -225,6 +234,7 @@ public class Tema {
     }
 
     public void submenuTema() {
+        System.out.println();
         System.out.println("\"**************TEMA**************\"");
         System.out.println("Para ver el contenido del tema:  ");
         int opcion;
@@ -235,26 +245,35 @@ public class Tema {
             System.out.println("3. Investigación");
             System.out.println("Ingrese el número de la opción elegida: ");
             opcion = entrada.nextInt();
+            entrada.nextLine();
 
             switch (opcion) {
                 case 1:
+                    System.out.println();
                     System.out.println("Conocimiento");
                     System.out.println("");
                     System.out.println("1. Listar conocimientos");
                     System.out.println("2. Cargar conocimiento ");
                     System.out.println("3. Cambiar estado de aprendido");
+                    System.out.println();
                     System.out.print("Ingrese el número de la opción elegida: ");
                     opcion = entrada.nextInt();
+                    entrada.nextLine();
 
                     if (opcion == 1) {
                         //Lista de conocimiento
                         //Tema unTema.();//?
                     } else if (opcion == 2) {
-                        Tema unTema = new Tema();
-                        unTema.registrarConocimiento();
+                        registrarConocimiento();
+//                        Tema unTema = new Tema();
+//                        unTema.registrarConocimiento();
                     } else if (opcion == 3) {
-                        Conocimiento unConocimiento = new Conocimiento();
-                        unConocimiento.cambiarEstadoAprendido(codigoTema);//VER
+                        System.out.println("Ingrese el código del tema del cual desea cambiar el estado: ");
+                        String codigoTema = entrada.nextLine();
+                        //Materia unaMateria = unaMateria.buscarTema(codigoTema);
+                        unConocimiento.cambiarEstadoAprendido(codigoTema);
+//                        Conocimiento unConocimiento = new Conocimiento();
+//                        unConocimiento.cambiarEstadoAprendido(codigoTema);//VER
                     } else {
                         System.out.println("Número ingresado no exite. Intente nuevamente");
                     }

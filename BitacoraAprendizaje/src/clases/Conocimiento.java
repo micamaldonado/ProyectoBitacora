@@ -32,7 +32,7 @@ public class Conocimiento {
 
     //Imprimir datos de cada conocimiento
     public void imprimirDatoConocimiento() {
-        System.out.println("Codigo: " + codigoConocimiento + '\n');
+        System.out.print("Codigo: " + codigoConocimiento + '\n');
         System.out.print("Concepto: " + conceptoConocimiento + '\n');
         System.out.print("Descripcion: " + descripcionConocimiento + '\n');
         System.out.print("Dudas: " + dudasConocimiento + '\n');
@@ -44,6 +44,7 @@ public class Conocimiento {
         imprimirDatoConocimiento();
         if (aprendido == false) {
             aprendido = true;
+            System.out.println();
             System.out.println("El estado Aprendido ha cambiado \"Sí\"");
         } else {
             aprendido = false;

@@ -167,13 +167,23 @@ public class GestionBitacora {
         Materia unaMateria = buscarMateria(codigoMateria);
         if (unaMateria != null) {
             unaMateria.imprimirTemaMateria();
-            System.out.println("Ingrese el código del tema que desea ver: ");
-            String codigoTema = entrada.nextLine();
-            Tema unTema = unaMateria.buscarTema(codigoTema);
-            //METODO SUBMENUS                    
-            if (unTema != null) {
-                unTema.submenuTema();
+
+            System.out.println();
+            System.out.println("¿Desea agregar un nuevo tema? S: Sí, N: NO");
+            String opcion = entrada.nextLine();
+            if ("S".equals(opcion)) {
+                unaMateria.registrarTema();
+                System.out.println();
+                System.out.println("TEMAS DE: " + unaMateria.getNombreMateria());
+                unaMateria.imprimirTemaMateria();
             }
+//            System.out.println("Ingrese el código del tema que desea ver: ");
+//            String codigoTema = entrada.nextLine();
+//            Tema unTema = unaMateria.buscarTema(codigoTema);
+            //METODO SUBMENUS                    
+//            if (unTema != null) {
+//                unTema.submenuTema();
+//            }
         } else {
             System.out.println("El código ingresado no existe");
         }
