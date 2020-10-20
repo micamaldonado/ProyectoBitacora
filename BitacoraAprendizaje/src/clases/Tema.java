@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Tema {
 
     static Scanner entrada = new Scanner(System.in);
-    Conocimiento unConocimiento = new Conocimiento ();
+    Conocimiento unConocimiento = new Conocimiento();
 
     String codigoTema;
     String nombreTema;
@@ -261,6 +261,7 @@ public class Tema {
                     entrada.nextLine();
 
                     if (opcion == 1) {
+                        imprimirConocimientos();
                         //Lista de conocimiento
                         //Tema unTema.();//?
                     } else if (opcion == 2) {
@@ -279,38 +280,55 @@ public class Tema {
                     }
                     break;
                 case 2:
+                    System.out.println();
                     System.out.println("Ejercicio");
                     System.out.println("");
                     System.out.println("1. Listar ejercicios");
-                    System.out.println("2.Cargar ejercicio ");
+                    System.out.println("2. Cargar ejercicio ");
+                    System.out.println();
                     System.out.print("Ingrese el número de la opción elegida: ");
                     opcion = entrada.nextInt();
+                    entrada.nextLine();
 
                     if (opcion == 1) {
+                        imprimirEjercicios();
                         //Listar de ejercicio
                         //Tema unTema.();//?
                     } else if (opcion == 2) {
-                        Tema unTema = new Tema();
-                        unTema.registrarEjercicio();
+                        registrarEjercicio();
+//                        Tema unTema = new Tema();
+//                        unTema.registrarEjercicio();
                     } else {
                         System.out.println("Número ingresado no exite. Intente nuevamente");
                     }
 
                     break;
                 case 3:
+                    System.out.println();
                     System.out.println("Investigación");
                     System.out.println("");
                     System.out.println("1. Listar investigaciones");
-                    System.out.println("2.Cargar investigación ");
+                    System.out.println("2. Cargar investigación");
+                    System.out.println("3. Cambiar nivel de comprensión");
+                    System.out.println();
                     System.out.print("Ingrese el número de la opción elegida: ");
                     opcion = entrada.nextInt();
+                    entrada.nextLine();
 
                     if (opcion == 1) {
+                        imprimirInvestigacion();
                         //Lista de conocimiento
                         //Tema unTema.();//?
                     } else if (opcion == 2) {
-                        Tema unTema = new Tema();
-                        unTema.registrarInvestigacion();
+                        registrarInvestigacion();
+//                        Tema unTema = new Tema();
+//                        unTema.registrarInvestigacion();
+                    } else if (opcion == 3) {                        
+                        //No se si funciona
+                        System.out.println("Ingrese el código de la investigación que desea cambiar: ");
+                        String codigoInvestigacion = entrada.nextLine();
+                        Investigacion unaInvestigacion = buscarInvestigacion(codigoInvestigacion);
+                        //CAMBIAR                        
                     } else {
                         System.out.println("Número ingresado no exite. Intente nuevamente");
                     }
@@ -324,6 +342,45 @@ public class Tema {
             }
 
         } while (opcion != 4);
+    }
+
+    public void imprimirConocimientos() {
+        System.out.println();
+        if (conocimientos.size() > 0) {
+            //System.out.println("Los libros prestados por este lector son: ");
+            for (int i = 0; i < conocimientos.size(); i++) {
+                Conocimiento unConocimiento = conocimientos.get(i);
+                System.out.println("Codigo: " + unConocimiento.getCodigoConocimiento() + " Conceptos: " + unConocimiento.getConceptoConocimiento() + "  Descripcion: " + unConocimiento.getDescripcionConocimiento() + " Dudas: " + unConocimiento.getDudasConocimiento());
+            }
+        } else {
+            System.out.println("No existe registro de conocimientos");
+        }
+    }
+
+    public void imprimirEjercicios() {
+        System.out.println();
+        if (ejercicios.size() > 0) {
+            //System.out.println("Los libros prestados por este lector son: ");
+            for (int i = 0; i < ejercicios.size(); i++) {
+                Ejercicio unEjercicio = ejercicios.get(i);
+                System.out.println("Codigo: " + unEjercicio.getCodigoEj() + "  Experiencia: " + unEjercicio.getExperiencia() + " Dudas: " + unEjercicio.getDudasEj() + " Tiempo dedicado: " + unEjercicio.getTiempoDedicadoEj() + " Porcentaje logrado: " + unEjercicio.getPorcLogrado());
+            }
+        } else {
+            System.out.println("No existe registro de ejercicios");
+        }
+    }
+
+    public void imprimirInvestigacion() {
+        System.out.println();
+        if (investigaciones.size() > 0) {
+            //System.out.println("Los libros prestados por este lector son: ");
+            for (int i = 0; i < investigaciones.size(); i++) {
+                Investigacion unaInvestigacion = investigaciones.get(i);
+                System.out.println("Codigo: " + unaInvestigacion.getCodigoInvestigacion() + "  Tema: " + unaInvestigacion.getTemaInvestigado() + " Comentarios: " + unaInvestigacion.getComentarios() + " Dudas: " + unaInvestigacion.getDudasInvestigacion()+ " Tiempo Dedicado: " + unaInvestigacion.getTiempoDedicadoInv()+  " Nivel de comprensión: "+ unaInvestigacion.getNivelComprension());
+            }
+        } else {
+            System.out.println("No existe registro de investigaciones.");
+        }
     }
 
     //Getters y setters
