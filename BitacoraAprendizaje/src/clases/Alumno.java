@@ -30,7 +30,15 @@ public class Alumno {
         this.apellidoAlumno = apellidoAlumno;
         this.emailAlumno = emailAlumno;
         this.contrasenhaAlumno = contrasenhaAlumno;
-        //materias = new ArrayList();
+        materias = new ArrayList();
+    }
+     public Alumno(String CI, String nombreAlumno, String apellidoAlumno, String emailAlumno, String contrasenhaAlumno, Materia unaMateria) {
+        this.CI = CI;
+        this.nombreAlumno = nombreAlumno;
+        this.apellidoAlumno = apellidoAlumno;
+        this.emailAlumno = emailAlumno;
+        this.contrasenhaAlumno = contrasenhaAlumno;
+        materias = new ArrayList();
     }
 // Imprimir datos del alumno
 
