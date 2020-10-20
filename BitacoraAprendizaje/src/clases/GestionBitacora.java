@@ -147,9 +147,9 @@ public class GestionBitacora {
     }
 
     public void recorrerArrayMaterias() {
-        Materia unaMateria = new Materia();
         if (materias.size() > 0) {
             for (int i = 0; i < materias.size(); i++) {
+                Materia unaMateria = materias.get(i);
                 System.out.println((i + 1) + ". " + "Código: " + unaMateria.getCodigoMateria() + "  Nombre: " + unaMateria.getNombreMateria());
             }
             System.out.println();
