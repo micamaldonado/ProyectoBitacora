@@ -47,8 +47,10 @@ public class Investigacion {
     }
 
     //Cambiar estado de aprendido
-    public void cambiarNivelInvestigacion(double nuevoNivelComprension) {
-        //NO SE ME OCURRE COMO :(
+    public void cambiarNivelInvestigacion() {
+        System.out.println("Ingrese el nuevo nivel de comprensión: ");
+        String nuevoNivelComprension = entrada.nextLine();
+        //COMO CAMBIAR ALGO YA EXISTENTE?
     }
 
     //Getters y setters

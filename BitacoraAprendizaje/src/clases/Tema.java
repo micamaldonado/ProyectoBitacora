@@ -325,8 +325,13 @@ public class Tema {
                     } else if (opcion == 3) {
                         System.out.println("Ingrese el código del tema del cual desea cambiar el estado: ");
                         String codigoTema = entrada.nextLine();
+                        Conocimiento unConocimiento = buscarConocimiento(codigoTema);
+                        if (unConocimiento != null) {
+                            unConocimiento.cambiarEstadoAprendido(codigoTema);
+                        }else{
+                            System.out.println("El conocimiento no existe");
+                        }
                         //Materia unaMateria = unaMateria.buscarTema(codigoTema);
-                        unConocimiento.cambiarEstadoAprendido(codigoTema);
 //                        Conocimiento unConocimiento = new Conocimiento();
 //                        unConocimiento.cambiarEstadoAprendido(codigoTema);//VER
                     } else {
@@ -378,10 +383,15 @@ public class Tema {
 //                        Tema unTema = new Tema();
 //                        unTema.registrarInvestigacion();
                     } else if (opcion == 3) {
-                        //No se si funciona
                         System.out.println("Ingrese el código de la investigación que desea cambiar: ");
                         String codigoInvestigacion = entrada.nextLine();
                         Investigacion unaInvestigacion = buscarInvestigacion(codigoInvestigacion);
+                        if (unaInvestigacion != null) {
+                            unaInvestigacion.imprimirDatoInvestigacion();
+                            unaInvestigacion.cambiarNivelInvestigacion();
+                        }else{
+                            System.out.println("La investigacion no existe.");
+                        }
                         //CAMBIAR                        
                     } else {
                         System.out.println("Número ingresado no exite. Intente nuevamente");
