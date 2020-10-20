@@ -5,7 +5,6 @@
  */
 package ejecutable;
 
-import clases.Alumno;
 import clases.GestionBitacora;
 import clases.Tema;
 import java.util.Scanner;
@@ -66,11 +65,11 @@ public class BitacoraAprendizaje {
     public static void ingresarAlumno() {
         unaGestionBitacora.ImprimirMateriaAlumno();
         System.out.println();
-        System.out.println("¿Desea agregar una nueva materia? S: Sí, N: NO");
-        String opcion = entrada.nextLine();
-        if ("S".equals(opcion)) {
-            unaGestionBitacora.registrarMateria();
-        }
+//        System.out.println("¿Desea agregar una nueva materia? S: Sí, N: NO");
+//        String opcion = entrada.nextLine();
+//        if ("S".equals(opcion)) {
+//            unaGestionBitacora.registrarMateria();
+//        }
         System.out.println("Presione cualquier tecla para continuar: ");
         entrada.nextLine();
     }

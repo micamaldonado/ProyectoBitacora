@@ -121,7 +121,7 @@ public class GestionBitacora {
 
     //Imprimir las materias del alumno
     public void ImprimirMateriaAlumno() {
-        Materia unaMateria = new Materia();
+        //Materia unaMateria = new Materia();
         System.out.println("CI del alumno: ");
         String CI = entrada.nextLine();
         Alumno unAlumno = buscarAlumno(CI);
@@ -129,21 +129,35 @@ public class GestionBitacora {
             unAlumno.imprimirDatoAlumno();
             System.out.println();
             System.out.println("Materias de: " + unAlumno.getNombreAlumno());
-            if (materias.size() > 0) {
-                for (int i = 0; i < materias.size(); i++) {
-                    System.out.println((i + 1) + ". " + "Código: " + unaMateria.getCodigoMateria() + "Nombre: " + unaMateria.getNombreMateria());
-                }
+            recorrerArrayMaterias();
+            System.out.println();
+            System.out.println("¿Desea agregar una nueva materia? S: Sí, N: NO");
+            String opcion = entrada.nextLine();
+            if ("S".equals(opcion)) {
+                registrarMateria();
                 System.out.println();
-                System.out.println("Elija el código de la materia para listar los temas: ");
-                imprimirListaTemaMateria();
-            } else {
-                System.out.println("No posee ninguna materia.");
+                System.out.println("Materias de: " + unAlumno.getNombreAlumno());
+                recorrerArrayMaterias();
             }
             //this.materias.add(unaMateria); CREO QUE ESTE NO HACE FALTA ACÁ
         } else {
             System.out.println("El número de CI ingresado no existe. Verifique e intente nuevamente");
         }
 
+    }
+
+    public void recorrerArrayMaterias() {
+        Materia unaMateria = new Materia();
+        if (materias.size() > 0) {
+            for (int i = 0; i < materias.size(); i++) {
+                System.out.println((i + 1) + ". " + "Código: " + unaMateria.getCodigoMateria() + "  Nombre: " + unaMateria.getNombreMateria());
+            }
+            System.out.println();
+            System.out.println("Elija el código de la materia para listar los temas: ");
+            imprimirListaTemaMateria();
+        } else {
+            System.out.println("No posee ninguna materia.");
+        }
     }
 
     //Imprimir datos de Temas por Materias
@@ -157,14 +171,13 @@ public class GestionBitacora {
             String codigoTema = entrada.nextLine();
             Tema unTema = unaMateria.buscarTema(codigoTema);
             //METODO SUBMENUS                    
-             if (unTema!= null) {
-                 unTema.submenuTema();
-             }
+            if (unTema != null) {
+                unTema.submenuTema();
+            }
         } else {
             System.out.println("El código ingresado no existe");
         }
     }
 
     //metodos submenus
-    
 }
