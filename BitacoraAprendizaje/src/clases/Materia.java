@@ -19,17 +19,39 @@ public class Materia {
     String nombreMateria;
     public ArrayList<Tema> temas;
 
-    public Materia() {
-    }
     //Constructor
+    public Materia() {
+        temasPorDefecto();
+    }
 
     public Materia(String codigoMateria, String nombreMateria) {
         this.codigoMateria = codigoMateria;
         this.nombreMateria = nombreMateria;
-        temas = new ArrayList();
+        this.temas = new ArrayList();
     }
 
-//Registrar temas
+    public Materia(String codigoMateria, String nombreMateria, Tema unTema) {
+        this.codigoMateria = codigoMateria;
+        this.nombreMateria = nombreMateria;
+        this.temas = new ArrayList();
+    }
+
+    //Datos en tema
+    public void temasPorDefecto() {
+
+        Tema unTema1 = new Tema("poo", "Programacion Orientada a Objetos - POO", "15/08/20");
+        Tema unTema2 = new Tema("mates", "Matematicas", "09/07/2018");
+        Tema unTema3 = new Tema("comun", "Comunicacion", "11/06/2019");
+
+        this.temas.add(unTema1);
+        this.temas.add(unTema2);
+        this.temas.add(unTema3);
+
+        //Tema tema1 = new Tema("1", "la fecha", "POO",conocimientos[], ejercicios[],investigaciones[]);
+        //temas.add(tema1);
+    }
+
+    //Registrar temas
     public void registrarTema() {
         System.out.println("Ingrese la fecha: ");
         String fechaTema = entrada.nextLine();
@@ -45,12 +67,6 @@ public class Materia {
         System.out.println("¡LOS DATOS DEL TEMA HAN SIDO CARGADOS SATISFACTORIAMENTE!");
         System.out.println();
     }
-    //Datos en tema
-// public void temaPorDefecto (){ 
-//     Tema unTema=new Tema();
-//Tema tema1 = new Tema ("1", "la fecha", "POO", unTema.conocimientos, unTema.ejercicios, unTema.investigaciones);
-//   temas.add(tema1);
-//    }
 
     //Imprimir datos de las materias
     public void imprimirDatoMateria() {
@@ -102,7 +118,7 @@ public class Materia {
             Tema unTema = buscarTema(codigoTema);
             if (unTema != null) {
                 unTema.submenuTema();
-            }else{
+            } else {
                 System.out.println("El código no existe. Intentelo nuevamente");
             }
         } else {

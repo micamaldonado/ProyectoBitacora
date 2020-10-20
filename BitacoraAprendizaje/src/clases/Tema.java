@@ -29,6 +29,38 @@ public class Tema {
 
     }
 
+    public void investigacionesPorDefecto() {
+        Investigacion unaInvestigacion1 = new Investigacion("inv1", "Investigación I", "01:50", "Ninguna", "Ninguna Duda", 60);
+        Investigacion unaInvestigacion2 = new Investigacion("inv2", "Investigación II", "02:30", "Especificar nombre", "Concepto", 40);
+        Investigacion unaInvestigacion3 = new Investigacion("inv3", "Investigación III", "04:00", "Faltan indicadores", "Muchas dudas", 70);
+
+        this.investigaciones.add(unaInvestigacion1);
+        this.investigaciones.add(unaInvestigacion2);
+        this.investigaciones.add(unaInvestigacion3);
+
+    }
+
+    public void conocimientosPorDefecto() {
+        Conocimiento unConocimiento1 = new Conocimiento("num1", "POO", "Significa Programacion Orientada a Objetos", "Ninguna", true);
+        Conocimiento unConocimiento2 = new Conocimiento("num2", "Lenguas", "Son un sistema de signos lingüísticos", "Ninguna", false);
+        Conocimiento unConocimiento3 = new Conocimiento("num3", "Radicales", "Es el proceso de hallar raíces de orden n de un número a", "Ninguna", false);
+
+        this.conocimientos.add(unConocimiento1);
+        this.conocimientos.add(unConocimiento2);
+        this.conocimientos.add(unConocimiento3);
+    }
+
+    public void ejerciciosPorDefecto() {
+        //Ejercicio(String codigoEj, String tiempoDedicadoEj, String experiencia, String dudasEj, double porcLogrado) {
+        Ejercicio unEjercicio1 = new Ejercicio("ej1", "02:00", "Muchos ejercicios para una tarde", "¿Cómo sumar?", 65);
+        Ejercicio unEjercicio2 = new Ejercicio("ej2", "01:40", "Pocos ejercicios para fijar conocimientos", "Ninguna", 50);
+        Ejercicio unEjercicio3 = new Ejercicio("ej3", "00:30", "Excelentes ejercicios", "Ninguna", 100);
+
+        this.ejercicios.add(unEjercicio1);
+        this.ejercicios.add(unEjercicio2);
+        this.ejercicios.add(unEjercicio3);
+    }
+
     //Constructor con parametros
     public Tema(String fechaTema, String codigoTema, String nombreTema) {
         this.fechaTema = fechaTema;
@@ -194,24 +226,28 @@ public class Tema {
         }
     }
 //Datos en conocimiento
-    public void ConocimientoPorDefecto (){
-    Conocimiento conocimiento1 = new Conocimiento ("1", "Objeto", "Un ente que consta de estado y comportamiento","-", true);
-    Conocimiento conocimiento2 = new Conocimiento ("2", "Constructor", "Es un método, su función es inicializar un objeto, para que estos puedan contener valores","-", true);
-    Conocimiento conocimiento3 = new Conocimiento ("3", "Instanciar", "", "-", true);
-    this.conocimientos.add(conocimiento1);
-    this.conocimientos.add(conocimiento2);
-    this.conocimientos.add(conocimiento3);
-}
- //Datos en ejercicio
-public void EjercicioPorDefecto (){
-    Ejercicio ejercicio1 = new Ejercicio ("1", "1:30:00", "Aprendí sobre el funcionamiento de las clases, constructores, etc.", "No me quedó tan claro lo de instanciar", 75);
-    this.ejercicios.add(ejercicio1);
-}
+
+    public void ConocimientoPorDefecto() {
+        Conocimiento conocimiento1 = new Conocimiento("1", "Objeto", "Un ente que consta de estado y comportamiento", "-", true);
+        Conocimiento conocimiento2 = new Conocimiento("2", "Constructor", "Es un método, su función es inicializar un objeto, para que estos puedan contener valores", "-", true);
+        Conocimiento conocimiento3 = new Conocimiento("3", "Instanciar", "", "-", true);
+        this.conocimientos.add(conocimiento1);
+        this.conocimientos.add(conocimiento2);
+        this.conocimientos.add(conocimiento3);
+    }
+    //Datos en ejercicio
+
+    public void EjercicioPorDefecto() {
+        Ejercicio ejercicio1 = new Ejercicio("1", "1:30:00", "Aprendí sobre el funcionamiento de las clases, constructores, etc.", "No me quedó tan claro lo de instanciar", 75);
+        this.ejercicios.add(ejercicio1);
+    }
 //Datos en Investigacion
-public void InvestigacionPorDefecto (){
-    Investigacion investigacion1 = new Investigacion ("1", "Instancias en POO", "40:00", "Sin comentarios","Sin dudas", 90);
-    this.investigaciones.add(investigacion1);
-}
+
+    public void InvestigacionPorDefecto() {
+        Investigacion investigacion1 = new Investigacion("1", "Instancias en POO", "40:00", "Sin comentarios", "Sin dudas", 90);
+        this.investigaciones.add(investigacion1);
+    }
+
     //Buscar conocimiento
     public Conocimiento buscarConocimiento(String codigoConocimiento) {
         Conocimiento unConocimiento;
