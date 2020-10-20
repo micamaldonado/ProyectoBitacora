@@ -323,7 +323,7 @@ public class Tema {
                         registrarInvestigacion();
 //                        Tema unTema = new Tema();
 //                        unTema.registrarInvestigacion();
-                    } else if (opcion == 3) {                        
+                    } else if (opcion == 3) {
                         //No se si funciona
                         System.out.println("Ingrese el código de la investigación que desea cambiar: ");
                         String codigoInvestigacion = entrada.nextLine();
@@ -376,7 +376,7 @@ public class Tema {
             //System.out.println("Los libros prestados por este lector son: ");
             for (int i = 0; i < investigaciones.size(); i++) {
                 Investigacion unaInvestigacion = investigaciones.get(i);
-                System.out.println("Codigo: " + unaInvestigacion.getCodigoInvestigacion() + "  Tema: " + unaInvestigacion.getTemaInvestigado() + " Comentarios: " + unaInvestigacion.getComentarios() + " Dudas: " + unaInvestigacion.getDudasInvestigacion()+ " Tiempo Dedicado: " + unaInvestigacion.getTiempoDedicadoInv()+  " Nivel de comprensión: "+ unaInvestigacion.getNivelComprension());
+                System.out.println("Codigo: " + unaInvestigacion.getCodigoInvestigacion() + "  Tema: " + unaInvestigacion.getTemaInvestigado() + " Comentarios: " + unaInvestigacion.getComentarios() + " Dudas: " + unaInvestigacion.getDudasInvestigacion() + " Tiempo Dedicado: " + unaInvestigacion.getTiempoDedicadoInv() + " Nivel de comprensión: " + unaInvestigacion.getNivelComprension());
             }
         } else {
             System.out.println("No existe registro de investigaciones.");
