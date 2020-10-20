@@ -62,6 +62,28 @@ public class GestionBitacora {
         System.out.println();
 
     }
+    //Datos de materias
+    public void materiasPorDefecto() {
+        Materia materia1 = new Materia("1", "Proyecto TIC");
+        Materia materia2 = new Materia("2", "Gestión Software");
+        Materia materia3 = new Materia("3", "Alemán");
+        Materia materia4 = new Materia("4", "Informática II");
+        this.materias.add(materia1);
+        this.materias.add(materia2);
+        this.materias.add(materia3);
+        this.materias.add(materia4);
+    }
+    //Datos de Alumnos
+     public void alumnosPorDefecto() {
+        Alumno alumno1 = new Alumno("111", "Milagros","López","milagros@gmail.com","111");
+        Alumno alumno2 = new Alumno("222", "Zileidy","Argüello","zileidy@gmail.com","222");
+        Alumno alumno3 = new Alumno("333", "Micaela","Maldonado","micaela@gmail.com","333");
+        Alumno alumno4 = new Alumno("444", "Diego","Giménez","diego@gmail.com","444");
+        this.alumnos.add(alumno1);
+        this.alumnos.add(alumno2);
+        this.alumnos.add(alumno3);
+        this.alumnos.add(alumno4);
+    }
 
     //Buscar alumno por CI
     public Alumno buscarAlumno(String CI) {

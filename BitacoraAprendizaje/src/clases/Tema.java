@@ -193,7 +193,25 @@ public class Tema {
             System.out.println("El código no existe. Verifique e intente nuevamente");
         }
     }
-
+//Datos en conocimiento
+    public void ConocimientoPorDefecto (){
+    Conocimiento conocimiento1 = new Conocimiento ("1", "Objeto", "Un ente que consta de estado y comportamiento","-", true);
+    Conocimiento conocimiento2 = new Conocimiento ("2", "Constructor", "Es un método, su función es inicializar un objeto, para que estos puedan contener valores","-", true);
+    Conocimiento conocimiento3 = new Conocimiento ("3", "Instanciar", "", "-", true);
+    this.conocimientos.add(conocimiento1);
+    this.conocimientos.add(conocimiento2);
+    this.conocimientos.add(conocimiento3);
+}
+ //Datos en ejercicio
+public void EjercicioPorDefecto (){
+    Ejercicio ejercicio1 = new Ejercicio ("1", "1:30:00", "Aprendí sobre el funcionamiento de las clases, constructores, etc.", "No me quedó tan claro lo de instanciar", 75);
+    this.ejercicios.add(ejercicio1);
+}
+//Datos en Investigacion
+public void InvestigacionPorDefecto (){
+    Investigacion investigacion1 = new Investigacion ("1", "Instancias en POO", "40:00", "Sin comentarios","Sin dudas", 90);
+    this.investigaciones.add(investigacion1);
+}
     //Buscar conocimiento
     public Conocimiento buscarConocimiento(String codigoConocimiento) {
         Conocimiento unConocimiento;

@@ -45,6 +45,12 @@ public class Materia {
         System.out.println("¡LOS DATOS DEL TEMA HAN SIDO CARGADOS SATISFACTORIAMENTE!");
         System.out.println();
     }
+    //Datos en tema
+// public void temaPorDefecto (){ 
+//     Tema unTema=new Tema();
+//Tema tema1 = new Tema ("1", "la fecha", "POO", unTema.conocimientos, unTema.ejercicios, unTema.investigaciones);
+//   temas.add(tema1);
+//    }
 
     //Imprimir datos de las materias
     public void imprimirDatoMateria() {
